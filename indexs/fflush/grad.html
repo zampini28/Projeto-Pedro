@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+.half-background {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.half-background::before,
+.half-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.half-background::before {
+  left: 0;
+  background-image: url(filled-star-icon.png);
+  background-size: cover;
+  width: 50%;
+}
+
+.half-background::after {
+  right: 0;
+  background-image: url(star-icon.png);
+  transform: scale(1.4) scaleX(-1) translate(-14px, 10px);
+  background-size: cover;
+  width: 50%    ;
+}
+    </style>
+  </head>
+  <body>
+    <div class="half-background" id="background"></div>
+  </body>
+</html>
+
+
+

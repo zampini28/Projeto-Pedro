@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Star</title>
+        <style>
+            .rating {
+              direction: rtl;
+              display: inline-block;
+            }
+
+            .rating input {
+              display: none;
+            }
+
+            .rating label {
+              display: inline-block;
+              width: 30px;
+              height: 30px;
+              background-image: url(star-icon.png); 
+              background-size: cover;
+            }
+
+            .rating input:checked + label {
+              background-image: url(filled-star-icon.png); 
+            }
+            
+            .star {
+              background-image: url(star-icon.png); 
+              background-size: cover;
+              display: inline-block;
+              width: 30px;
+              height: 30px;
+            }
+        </style>
+        <script>
+            const ratingInputs = document.querySelectorAll('.rating input');
+            const handleRatingChange = event => {
+              const rating = event.target.value;
+              document.getElementById("showstar").innerHTML = rating;
+              console.log('Rating:', rating);
+            };
+
+            ratingInputs.forEach(input => {
+              input.addEventListener('change', handleRatingChange);
+            });
+            
+            const printRate = () => {
+                const rate = document.getElementById("rate").innerHTML;
+                console.log("The rate is " + rate);
+                let x;
+                x = Math.floor(rate);
+                for(let i = 1; i <= x; i++) {
+                    let name = "star" + i;
+                    let element = document.getElementById(name);
+                    element.style.backgroundImage="url(filled-star-icon.png)";
+                }
+            };   
+        </script>
+    </head>
+    <body>
+        <h1>This movie is rated <span id="rate">3.1</span></h1>
+        <div class="rating">
+          <span id="star5" class="star"></span>
+          <span id="star4" class="star"></span>
+          <span id="star3" class="star"></span>
+          <span id="star2" class="star"></span>
+          <span id="star1" class="star"></span> 
+          <script>printRate();</script>
+        </div>
+    </body>
+</html>

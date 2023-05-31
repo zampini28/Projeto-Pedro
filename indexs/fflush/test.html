@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const submitForm = () => {
+	const usuario = document.getElementById("usuario").value;
+	const senha = document.getElementById("senha").value;
+        const button = document.getElementById("submit");
+	if (usuario == 'admin' && senha == 'admin') {
+	  document.getElementById('certo')
+			    .style.display = "block";
+	  document.getElementById('errado')
+			    .style.display = "none";
+	  button.style.display = "none";
+	  document.getElementById("niceform").submit();
+	} else {
+	  document.getElementById('errado')
+			    .style.display = "block";
+	}
+      };
+    </script>
+  </head>
+  <body>
+	  <form action="#" method="post" id="niceform">
+	  <label for="usuario">usuario: </label>
+	  <input id="usuario" type="text">
+	  <br>
+	  <label for="senha">senha: </label>
+	  <input id="senha" type="password">
+	  <br>
+	  <p id="certo" style="display: none; color: green;">Login certo!</p>
+	  <p id="errado" style="display: none; color: red;">Login errado!</p>
+	  <button id="submit" onclick="submitForm();">Enviar</button>
+	  </form>
+  </body>
+</html>
