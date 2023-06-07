@@ -1,0 +1,15 @@
+Update:
+  Operacao="atualizar"
+  Query="id"
+  
+Deletar
+  Operacao="deletar"
+  Query="id"
+  
+Select
+  Operacao="id" | "sinopse" | "diretor" | "preco"
+  Query="searchbar text"
+  
+Inserir
+  Operacao="inserir"
+  Query=""
